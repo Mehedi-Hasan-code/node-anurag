@@ -14,3 +14,5 @@ send.product = product
 //   sum,
 //   product
 // }
+
+console.log(module);

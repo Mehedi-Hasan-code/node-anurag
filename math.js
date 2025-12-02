@@ -6,13 +6,16 @@ function product(...args) {
   return args.reduce((acc, curr) => acc * curr, 1)
 }
 
-let send = module.exports 
-send.sum = sum
-send.product = product
 
+
+// let send = module.exports 
+// send.sum = sum
+// send.product = product
+
+send.a = 5
 // module.exports = {
 //   sum,
 //   product
 // }
 
-console.log(module);
+console.log('hi from math.js');

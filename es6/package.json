@@ -1,15 +1,3 @@
 {
-  "name": "my-package",
-  "version": "1.0.0",
-  "description": "i dont know",
-  "main": "app.js",
-  "scripts": {
-    "hi": "ls",
-    "start": "node app.js",
-    "restart": "pwd",
-    "test": "git -v",
-    "stop": "whoami"
-  },
-  "author": "",
-  "license": "ISC"
+  "type": "module"
 }

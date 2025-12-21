@@ -12,13 +12,12 @@
 
 // console.log('end');
 
-const a = new ArrayBuffer(6);
-const view = new DataView(a, 2)
+const a = new ArrayBuffer(1.99 * 1024 * 1024 * 1024);
+const view = new DataView(a);
 
-view.setInt8(0, 255);
-view.setInt8(1, 0x32);
-view.setInt8(2, 0o62);
-view.setInt8(3, 0b00110010);
+
+for(let i = 0; i < a.byteLength; i++) {
+  view.setInt8(i, i+1)
+}
 
 console.log(a);
-console.log(view.getInt8(0));

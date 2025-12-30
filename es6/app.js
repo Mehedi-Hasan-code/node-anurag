@@ -27,22 +27,24 @@ import fs from 'node:fs/promises'
 // typed arrays
 
 
-const unit8Array = new Uint8Array(8)
+// const unit8Array = new Uint8Array(8)
 
-unit8Array[0] = 0x50
-unit8Array[1] = 0x72
-unit8Array[2] = 0x6f
-unit8Array[3] = 0x43
-unit8Array[4] = 0x6f
-unit8Array[5] = 0x64
-unit8Array[6] = 0x72
-unit8Array[7] = 0x73
+// unit8Array[0] = 0x50
+// unit8Array[1] = 0x72
+// unit8Array[2] = 0x6f
+// unit8Array[3] = 0x43
+// unit8Array[4] = 0x6f
+// unit8Array[5] = 0x64
+// unit8Array[6] = 0x72
+// unit8Array[7] = 0x73
 
 
 
-console.log(unit8Array);
-const view = new DataView(unit8Array.buffer)
+// console.log(unit8Array);
+// const view = new DataView(unit8Array.buffer)
 
-fs.writeFile("buffer-text.txt", view)
+// fs.writeFile("buffer-text.txt", view)
+
+
 
 

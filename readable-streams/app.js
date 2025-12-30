@@ -5,28 +5,28 @@ const readStream = fs.createReadStream('chars.txt', {
 });
 
 // let readCount = 0;
-readStream.on('data', (chunk) => {
-  // console.log(chunk.toString());
-  const { bytesRead, readableHighWaterMark } = readStream
-  console.log(bytesRead, readableHighWaterMark);
-  // readCount++;
+// readStream.on('data', (chunk) => {
+//    console.log(chunk.toString());
+//   const { bytesRead, readableHighWaterMark } = readStream
+//   console.log(bytesRead, readableHighWaterMark);
+//    readCount++;
 
-  if (bytesRead === readableHighWaterMark) {
-    fs.writeFileSync('./abc.txt', chunk);
-  }
+//   if (bytesRead === readableHighWaterMark) {
+//     fs.writeFileSync('./abc.txt', chunk);
+//   }
 
-  fs.appendFileSync('abc.txt', chunk);
-  readStream.pause();
+//   fs.appendFileSync('abc.txt', chunk);
+//   readStream.pause();
 
-  setTimeout(() => {
-    readStream.resume();
-  }, 500);
-});
+//   setTimeout(() => {
+//     readStream.resume();
+//   }, 500);
+// });
 
 
-readStream.on('pause', () => {
-  console.log('stream paused');
-})
-readStream.on('resume', () => {
-  console.log('stream resumed');
+
+readStream.on('readable', () => {
+  console.log(readStream.readableLength);
+  console.log(readStream.read(4));
+  console.log(readStream.readableLength);
 })

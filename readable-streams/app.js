@@ -1,8 +1,11 @@
-import fs from 'node:fs';
+import fs, { read } from 'node:fs';
 
 const readStream = fs.createReadStream('chars.txt', {
   highWaterMark: 4,
 });
+
+
+readStream.setEncoding('utf-8')
 
 // let readCount = 0;
 // readStream.on('data', (chunk) => {
@@ -25,8 +28,12 @@ const readStream = fs.createReadStream('chars.txt', {
 
 
 
-readStream.on('readable', () => {
-  console.log(readStream.readableLength);
-  console.log(readStream.read(4));
-  console.log(readStream.readableLength);
-})
+// readStream.on('readable', () => {
+//   console.log(readStream.readableLength);
+//   console.log(readStream.read(4));
+//   console.log(readStream.readableLength);
+// })
+
+readStream.on('data', (chunk) => {
+  console.log(chunk);
+});
